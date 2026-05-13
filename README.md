@@ -20,8 +20,11 @@ Answer: a lot. Our best model hit 98%.
 A full ML pipeline from raw data to evaluated models, including:
 
 _Preprocessing in Linux command-line_ — relabeling, deduplication, class distribution checks, and missing value verification, all done in bash before touching Python
+
 **Three models:** Random Forest, Multinomial Logistic Regression, and a Multilayer Perceptron (TensorFlow)
+
 _Systematic experimentation_ — each model was evaluated across four conditions: original vs. deduplicated data, with and without 5-fold cross-validation, to isolate what actually improved performance
+
 _Hyperparameter tuning via GridSearchCV_ on all models
 
 **Results**
