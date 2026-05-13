@@ -1,0 +1,104 @@
+    #q1
+    1  groupadd testgroup
+   #groupadd: Permission denied.
+    #groupadd: cannot lock /etc/group; try again later.
+    2  sudo groupadd testgroup
+    3  cat /etc/group | grep testgroup
+
+
+    #q2
+    4  whoami
+    5  sudo usermod -aG testgroup nbourne
+    # -a means append. Appends the group to the user’s list of groups instead of replacing the list with only that group. -G is the group list.
+
+
+    #q3
+    7  tail -n +2 breast_cancer.csv | wc -l
+    8  head -n 1 breast_cancer.csv | awk -F',' '{print NF}'
+    # 575 rows. 32 columns.
+
+
+    #q4
+   10  cut -d',' -f2 breast_cancer.csv | tail -n +2 | sort | uniq
+   11  cut -d',' -f2 breast_cancer.csv | tail -n +2 | sort | uniq | wc -l
+    # 2 unique values, B and M.
+    # It is a binary classification problem because there are 2 categories, B and M.
+ 
+    #q5
+   12  grep -c ",B," breast_cancer.csv
+   13  grep -c ",M," breast_cancer.csv
+    # 361 B values. 214 M values.
+    # The sum of the two values adds up to the total rows (minus the header), but there could still be duplicate rows.
+
+
+    #q6
+   15  tail -n +2 breast_cancer.csv | grep -Ec '^,|,,|,$'
+    # 10 rows with missing data
+   17  (head -n 1 breast_cancer.csv && tail -n +2 breast_cancer.csv | grep -Ev '^,|,,|,$') > filled_missing_bc.csv
+
+
+    #q7
+   20  tail -n +2 breast_cancer_clean.csv | sort | uniq -d | wc -l
+    # 4 duplicates
+   21  (head -n 1 breast_cancer_clean.csv && tail -n +2 breast_cancer_clean.csv | sort | uniq) > deduped_bc.csv
+
+
+    #q8
+   22  cut -d',' -f2- deduped_bc.csv > temp.csv
+   23  mv temp.csv > noID_bc.csv
+
+
+    #q9
+    28  awk -F, 'BEGIN{FS=OFS=","} {if($1=="B") $1="0"; else if($1=="M") $1="1"; print}' noID_bc.csv > relabeled_bc.csv
+
+
+    #q10
+    29  tail -n +2 relabeled_bc.csv | wc -l
+    32  head -n 1 relabeled_bc.csv | awk -F',' '{print NF}'
+    34  cut -d',' -f2 relabeled_bc.csv | tail -n +2 | sort | uniq | wc -l
+    # 559 rows. 31 columns. 452 unique diagnoses. 
+    35  cp relabeled_bc.csv finalv.csv
+    36  history > cmds.txt
+
+
+    #q14
+   40  normalize() {col=$1; infile=$2; outfile=$3; min=$(awk -F, -v col="$col" 'NR>1 {if($col<a) a=$col} END{print a}' a=100000 "$infile"); max=$(awk -F, -v col="$col" 'NR>1 {if($col>a) a=$col} END{print a}' a=-100000 "$infile"); awk -F, -v OFS=',' -v col="$col" -v min="$min" -v max="$max" 'NR==1{print; next} {
+    $col=($col-min)/(max-min)
+    print
+  }' "$infile" > "$outfile"; }
+   41  normalize 2 relabeled_bc.csv temp2.csv
+   42  normalize 3 temp2.csv temp3.csv
+   43  normalize 4 temp3.csv temp4.csv
+   44  normalize 5 temp4.csv temp5.csv
+   45  normalize 6 temp5.csv temp6.csv
+   46  normalize 7 temp6.csv temp7.csv
+   47  normalize 8 temp7.csv temp8.csv
+   48  normalize 9 temp8.csv temp9.csv
+   49  normalize 10 temp9.csv temp0.csv
+   50  normalize 11 temp0.csv temp1.csv
+   51  normalize 12 temp1.csv temp0.csv
+   52  normalize 13 temp0.csv temp1.csv
+   53  normalize 14 temp1.csv temp0.csv
+   54  normalize 15 temp0.csv temp1.csv
+   55  normalize 16 temp1.csv temp0.csv
+   56  normalize 17 temp0.csv temp1.csv
+   57  normalize 18 temp1.csv temp0.csv
+   58  normalize 19 temp0.csv temp1.csv
+   59  normalize 20 temp1.csv temp0.csv
+   60  normalize 21 temp0.csv temp1.csv
+   61  normalize 22 temp1.csv temp0.csv
+   62  normalize 23 temp0.csv temp1.csv
+   63  normalize 24 temp1.csv temp0.csv
+   64  normalize 25 temp0.csv temp1.csv
+   65  normalize 26 temp1.csv temp0.csv
+   66  normalize 27 temp0.csv temp1.csv
+   67  normalize 28 temp1.csv temp0.csv
+   68  normalize 29 temp0.csv temp1.csv
+   69  normalize 30 temp1.csv temp0.csv
+   70  normalize 31 temp0.csv finalv2.csv
+
+
+    #q15
+   73  history > cmds.log
+   74  vi cmds.log
+   75  history > cmds.log
