@@ -1,5 +1,11 @@
+**General Overview**
 This is the repo I made for CS-131: Processing Big Data - Tools and Techniques, a class I took at SJSU in Spring 2025. 
-During the class, I uploaded the csv files we were given here so I could turn them into dataframes to work with in Python.
-Later, I uploaded the ipynb files that contained the ML models I created. We utilized Scikit-learn and TensorFlow libraries to implement ML algorithms.
+Assignment notebooks can be found in 'notebooks', their csv's live in 'data', and the Bash preprocessing scripts are in 'preprocessing'. We utilized Scikit-learn and TensorFlow libraries to implement ML algorithms.
 
-(Note: Letter Recognition Final was a group project. You can read 'CS131 Final Report.pdf' for an in-depth analysis)
+# OCR Machine Learning Project Overview
+A machine learning project revisiting a classic optical character recognition (OCR) problem: given pixel measurements of a capital letter, can we correctly identify it? We used the same dataset from Frey and Slate's 1991 paper as a benchmark, then evaluated three modern models against it to see how far the field has come.
+
+*Partner project with Huu Tinh Nguyen. Full methodology and results in `CS131_Final_Report.pdf`.*
+
+**The Question**
+TEXT
