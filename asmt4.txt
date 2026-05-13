@@ -1,0 +1,196 @@
+    1  unzip letter+recognition.zip
+    2  cd Downloads
+    3  unzip letter+recognition.zip
+    4  file Index
+    5  file letter-recognition.data
+    6  letter-recognition.names
+    7  file letter-recognition.names
+    8  head letter-recognition.data
+    9  head letter-recognition.names
+   10  less letter-recognition.names
+   11  less letter-recognition.data
+   12  mkdir -p /home/nbourne/cs131/A4
+   13  cd /home/nbourne/cs131/A4
+   14  mv /path/to/Business_case_dataset.csv
+   15  mv --help
+   16  mv /Downloads/to/Business_case_dataset.csv
+   17  pwd
+   18  ls ~/Downloads
+   19  mv ~/Downloads/Business_case_dataset.csv
+   20  mv ~/Downloads/Business_case_dataset.csv .
+   21  ls
+   22  head Business_case_dataset.csv
+   23  cut -d ',' -f2- Business_case_dataset.csv > temp.csv
+   24  mv temp.csv Business_case_dataset.csv
+   25  head Business_case_dataset.csv
+   26  sort Business_case_dataset.csv | uniq -d
+   27  sort Business_case_dataset.csv | uniq > temp.csv
+   28  mv temp.csv Business_case_dataset.csv
+   29  head Buisness_case_dataset.csv
+   30  wc -l Business_case_dataset.csv
+   31  mkdir -p /home/nbourne/cs131/A4
+   32  cd /home/nbourne/cs131/A4
+   33  mv ~Downloads/Business_case_dataset.csv
+   34  mv ~Downloads/Business_case_dataset.csv .
+   35  pwd
+   36  ls ~Downloads
+   37  ls ~/Downloads
+   38  mv ~/Downloads/Business_case_dataset.csv
+   39  mv ~/Downloads/Buisness_case_dataset.csv .
+   40  mv ~/Downloads/Business_case_dataset.csv .
+   41  ls
+   42  cut -d "," -f2- Business_case_dataset.csv > temp.csv
+   43  mv temp.csv business_case_processed_dset.csv
+   44  head business_case_processed_dset.csv
+   45  sort business_case_processed_dset.csv | uniq
+   46  sort business_case_processed_dset.csv | uniq > temp.csv
+   47  mv temp.csv business_case_processed_dset.csv
+   48  wc -l business_case_processed_dset.csv
+   49  grep -c "?" business_case_processed_dset.csv
+   50  head -1 business_case_processed_dset.csv
+   51  head business_case_processed_dset.csv
+   52  head Business_case_dataset.csv
+   53  awk -F ',' '$12 == "?"' business_case_processed_dset.csv | wc -l
+   54  head -1 business_case_processed_dset.csv | awk -F',' '{print NF}'
+   55  awk -F',' '$11 == "?"' business_case_processed_dset.csv | wc -l
+   56  awk -F',' '{print $11}' business_case_processed_dset.csv | sort | uniq -c
+   57  awk -F',' '$11=="?"' business_case_processed_dset.csv | wc -l
+   58  awk -F',' '$15=="?"' business_case_processed_dset.csv | wc -l
+   59  awk -F',' '$14=="?"' business_case_processed_dset.csv | wc -l
+   60  head -1 ~/Business_case_dataset.csv | tr ',' '\n' | nl
+   61  head -1 ~/Downloads/Business_case_dataset.csv | tr ',' '\n' | nl
+   62  head -1 business_case_processed_dset.csv | tr ',' '\n' | nl
+   63  awk -F',' '$11=="?"' business_case_processed_dset.csv | wc -l
+   64  awk -F',' '{print "[" $11 "]"}' business_case_processed_dset.csv | sort | uniq -c
+   65  awk -F',' '{print NF}
+   66  q
+   67  qqq
+   68  sos
+   69  mkdir -p /home/nbourne/cs131/A4
+   70  cd /home/nbourne/cs131/A4
+   71  mv ~/Downloads/Business_case_dataset.csv .
+   72  ls
+   73  cut -d',' -f2- Business_case_dataset.csv > temp.csv
+   74  mv temp.csv Business_case_dataset.csv
+   75  head Business_case_dataset.csv
+   76  sort Business_case_dataset.csv | uniq
+   77  sort Business_case_dataset.csv | uniq > temp.csv
+   78  mv temp.csv Business_case_dataset.csv
+   79  head Business_case_dataset.csv
+   80  sort Business_case_dataset.csv | uniq
+   81  grep -c "?" Business_case_dataset.csv
+   82  awk -F',' '$11=="?"' Business_case_dataset.csv | wc -l
+   83  awk -F',' '$12=="?"' ~/Downloads/Business_case_dataset-1.csv | wc -l
+   84  awk -F',' '$11=="?"' ~/Downloads/Business_case_dataset-1.csv | wc -l
+   85  awk -F',' '{print "[" $11 "]"}' Business_case_dataset.csv | less
+   86  tr -d '\r' < Business_case_dataset.csv > clean.csv
+   87  mv clean.csv Business_case_dataset.csv
+   88  awk -F',' '{print "[" $11 "]"}' Business_case_dataset.csv | sort | uniq -c
+   89  awk -F',' '$11=="?"' Business_case_dataset.csv | wc -l
+   90  awk -F',' '$11!="?"' Business_case_dataset.csv > temp.csv
+   91  mv temp.csv Business_case_dataset.csv
+   92  awk -F',' '$11=="?"' Business_case_dataset.csv | wc -l
+   93  head -1 Business_case_dataset.csv
+   94  awk -F',' '$7!="?" {sum+=$7; count++} END {print sum/count} Business_case_dataset.csv
+   95  awk -F',' '$7!="?"' {sum+=$7; count++} END {print sum/count} Business_case_dataset.csv
+   96  awk -F',' '$7!="?" {sum+=$7; count++} END {print sum/count}' Business_case_dataset.csv
+   97  awk -F',' -v avg=0.168054 'BEGIN{0FS=","} {if($7=="?") $7=avg; print}' Business_case_dataset.csv > temp.csv
+   98  history > cmds.txt
+   99  cat cmds.txt
+  100  awk 'BEGIN{FS=0FS","} {if ($6 == "?") $6 = "0.168054"; print}' Business_case_dataset.csv > temp.csv
+  101  mv temp.csv Business_case_dataset.csv
+  102  awk -F, 'NR>1 && $6=="?"' Business_case_dataset.csv
+  103  awk -F, 'BEGIN{FS=0FS=","} {if ($6 == "?") $6 = "0.168054"; print}' Business_case_dataset.csv > temp.csv
+  104  awk -F, 'BEGIN{0FS=","} {if ($6 == "?") $6 = "0.168054; print}' Business_case_dataset > temp.csv
+  105  awk 'BEGIN{FS=0FS=","} NR==1{print; next} {if ($6 == "?") $6 = "0.168054"; print}' Business_case_dataset.csv > temp.csv
+  106  awk 'BEGIN{FS=OFS=","} {if ($6 == "?") $6 = "0.168054"; print}' Business_case_dataset.csv > temp.csv
+  107  mv temp.csv > Business_case_dataset.csv
+  108  mv temp.csv Busincess_case_dataset.csv
+  109  mv temp.csv Business_case_dataset.csv
+  110  mv Busincess_case_dataset.csv Business_case_dataset.csv
+  111  Business_case_dataset.csv head
+  112  cat Business_case_dataset.csv
+  113  awk -F, 'BEGIN{FS=OFS=","} {if ($5 == "Yes") $5 = "1"; if ($5 == "No") $5 = "0"; if ($11 == "Yes") $11 = "1"; if ($11 = "No") $11 = "0"; print}' Business_case_dataset.csv > temp.csv
+  114  cat temp.csv
+  115  mv temp.csv Business_case_dataset.csv
+  116  history > cmds.txt
+  117  min1=$(awk -F, 'BEGIN{a=100000} NR>1{if($1<a) a=$1} END{print a}' Business_case_dataset.csv
+)
+  118  history | tail -5
+  119  echo "$mins1"
+  120  echo "$min1"
+  121  history > cmds.txt
+  122  max1=$(ark -F, 'BEGIN{a=-100000} NR>1{if($1>a) a=$1} END{print a}' Business_case_dataset.csv)
+  123  max1=$(awk -F, 'BEGIN{a=100000} {if($1>a) a=$1} END{print a}' Business_case_dataset.csv)
+  124  echo "$max1"
+  125  max1=$(awk -F, 'BEGIN{a=100000} NR>1{if($1>a) a=$1} END{print a}' Business_case_dataset.csv)
+  126  echo "$max1"
+  127  max1=$(awk -F, 'BEGIN{a=-100000} {if($1>a) a=$1} END{print a}' Business_case_dataset.csv)
+  128  echo "$max1"
+  129  tail -5 Business_case_dataset.csv
+  130  head -n -1 Business_case_dataset.csv > Business_case_dataset_fixed.csv
+  131  tail -5 Business_case_dataset_fixed.csv
+  132  mv Business_case_dataset_fixed.csv > Business_case_dataset.csv
+  133  mv Business_case_dataset_fixed.csv Business_case_dataset.csv
+  134  max1=$(awk -F, 'BEGIN{a=-100000) {if($1>1) a=$1} END{print a}
+' Business_case_dataset.csv)
+  135  echo "$max1"
+  136  max1=$(awk -F, 'BEGIN{a=-100000} {if($1>a) a=$1} END{print a}' Business_case_dataset.csv)
+  137  echo "$max1"
+  138  awk -F, -v OFS=',' -v min="$min1" -v max="$max1" '{$1=($1-min)/(max-min); print}' Business_case_dataset.csv > temp1.csv
+  139  head temp1.csv
+  140  head Business_case_dataset.csv
+  141  history > cmds.txt
+  142  min2=$(awk -F, 'BEGIN{a=10000} {if($2<a) a=$2} END{print a}' Business_case_dataset.csv)
+  143  max2=$(awk -F, 'BEGIN{a=-100000} {if($2>a) a=$2} END{print a}' Business_case_dataset.csv)
+  144  awk -F, -v OFS="," -v min="$min2" -v max="$max2" '{$2=($2-min)/(max-min); print}' Business_case_dataset.csv > temp2.csv
+  145  head temp2.csv
+  146  awk -F, -v="," -v min="$min2" -v max="$max2" '{$2=($2-min)/max-min); print}' temp1.csv > temp2.csv
+  147  awk -F, -f OFS="," -v min="$min2" -v max="$max2" '{$2=($2-min)/(max-min); print}' temp1.csv > temp2.csv
+  148  min2=$(awk -F, 'BEGIN{a=100000} {if($2<a) a=$2} END{print a}' temp1.csv)
+  149  max2=$(awk -F, 'BEGIN{a=-100000} {if($2>a) a=$2} END{print a}' temp1.csv)
+  150  awk -F, -v OFS=',' -v min="$min2" -v max="$max2" '{$2=($2-min)/(max-min); print}' temp1.csv > temp2.csv
+  151  head temp2.csv
+  152  min3=$(awk -F, 'BEGIN{a=100000} {if($3<a) a=$3} END{print a}' temp2.csv)
+  153  max3=$(awk -F, 'BEGIN{a=-100000} {if($3>a) a=$3} END{print a}' temp2.csv)
+  154  awk -F, -v OFS=',' -v min="$min3" -v max="$max3" '{$3=($3-min)/(max-min); print}' temp2.csv > temp3.csv
+  155  temp3.csv head
+  156  head temp3.csv
+  157  min4=$(awk -F, 'BEGIN{a=100000} {if($4<a) a=$4} END{print a}' temp3.csv)
+  158  max4=$(awk -F, 'BEGIN{a=-100000} {if($4>a) a=$4} END{print a}' temp3.csv)
+  159  awk -F, -v OFS=',' -v min="$min4" -v max="$max4" '{$4=($4-min)/(max-min); print}' temp3.csv > temp4.csv
+  160  head temp4.csv
+  161  min5=$(awk -F, 'BEGIN{a=100000} {if($5<a) a=$5} END{print a}' temp4.csv)
+  162  max5=$(awk -F, 'BEGIN{a=-100000} {if($5>a) a=$5} END{print a}' temp4.csv)
+  163  awk -F, -v OFS=',' -v min="$min5" -v max="$max5" '{$5=($5-min)/(max-min); print}' temp4.csv > temp5.csv
+  164  head temp5.csv
+  165  min6=$(awk -F, 'BEGIN{a=100000} {if($6<a) a=$6} END{print a}' temp5.csv)
+  166  max6=$(awk -F, 'BEGIN{a=-100000} {if($6>a) a=$6} END{print a}' temp5.csv)
+  167  awk -F, -v OFS=',' -v min="$min6" -v max="$max6" '{$6=($6-min)/(max-min); print}' temp5.csv > temp6.csv
+  168  head temp6.csv
+  169  min7=$(awk -F, BEGIN{a=100000} {if($7<a) a=$7} END{print a}' temp6.csv)
+  170  min7=$(awk -F, 'BEGIN{a=100000} {if($7<a) a=$7} END{print a}' temp6.csv)
+  171  max7=$(awk -F, BEGIN{a=-100000} {if($7>a) a=$7} END(print a}' temp6.csv)
+  172  max7=$(awk -F, BEGIN{a=-100000} {if($7>a) a=$7} END{print a}' temp6.csv)
+  173  max7=$(awk -F, 'BEGIN={a=-100000} {if($7>a) a=$7} {END{print a}' temp6.csv)
+  174  max7=$(awk -F, 'BEGIN{a=-100000} {if($7>a) a=$7} END{print a}' temp6.csv)
+  175  awk -F, -v OFS=',' -v min="$min7" -v max="$max7" '{$7=($7-min)/(max-min); print}' temp6.csv > temp7.csv 
+  176  min8=$(awk -F, 'BEGIN{a=100000} {if($8<a) a=$8} END{print a}' temp7.csv)
+  177  max8=$(awk -F, 'BEGIN{a=-100000} {if($8>a) a=$8} END{print a}' temp7.csv)
+  178  awk -F, -v OFS=',' -v min="$min8" -v max="$max8" {$8=($8-min)/(max-min); print}' temp7.csv > temp8.csv
+  179  awk -F, -v OFS=',' -v min="$min8" -v max="$max8" '{$8=($8-min)/(max-min); print}' temp7.csv > temp8.csv
+  180  head temp8.csv
+  181  max9=$(awk -F, 'BEGIN{a=10000} {if($9<a) a=$9} END{print a}' temp8.csv)
+  182  min9=$awk -F, 'BEGIN{a=100000} {if($9<a) a=$9} END{print a}' temp8.csv)
+  183  min9=$(awk -F, 'BEGIN{a=100000} {if($9<a) a=$9} END{print a}' temp8.csv)
+  184  max9=$(awk -F, 'BEGIN{a=-100000} {if($9>a) a=$9} END{print a}' temp8.csv)
+  185  awk -F, -v OFS=',' -v min="$min9" -v max="$max9" '{$9=($9-min)/(max-min); print}' temp8.csv > temp9.csv
+  186  head temp9.csv
+  187  min10=$(awk -F, 'BEGIN{a=100000} {if($10<a) a=$10} END{print a}' temp9.csv)
+  188  max10=$(awk -F, 'BEGIN{a=-100000} {if($10>a) a=$10} END{print a}' temp9.csv)
+  189  awk -F, -v OFS=',' -v min="$min10" -v max="$max10" '{$10=($10-min)/(max-min); print}' temp9.csv > temp10.csv
+  190  head temp10.csv
+  191  mv temp10.csv business_case_processed_dset.csv
+  192  history > cmds.txt
+  193  vi business_case_processed_dset.csv
+  194  history > cmds.txt

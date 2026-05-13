@@ -1,0 +1,24 @@
+    1  ls #test like in the slideshow
+    3  mkdir -p /home/nbourne/cs131/A3 #q1 (correct version)
+    4  echo $HOME #q2 (/home/nbourne/ is my home directory path)
+    5  pwd #q2, gave me same info
+    6  mkdir temp #q3
+    7  chmod 644 temp #remove execute perm for me
+    8  cd temp #not allowed
+    9  ls temp #allowed
+   10  ls -l temp #allowed
+   11  touch temp/test.txt #not allowed
+   12  mkdir temp2 #q4
+   13  mv temp2 temp3 #worked
+   14  cp temp3 #didnt work
+   15  cp -r temp3 copy3 #did work (recursively cp entire dir)
+   18  cd ~/cs131/A3 #switching back to home dir
+   20  head -n 6 wine.csv #q5
+   22  grep -i "high" wine.csv | wc -l > counts.txt #finding line counts for each category
+   24  grep -i "medium-high" wine.csv | wc -l >> counts.txt
+   25  grep -i "medium" wine.csv | wc -l >> counts.txt
+   26  grep -i "medium-low" wine.csv | wc -l >> counts.txt
+   27  grep -i "low" wine.csv | wc -l >> counts.txt
+   28  cat counts.txt #checking after all greps
+   29  vi counts.txt #added titles for each, and then used :%s/(category name)/(given num value)/g to swap them out.
+   30  history > cmds.txt #q6
