@@ -4,20 +4,16 @@ This repo is from CS-131: Processing Big Data - Tools and Techniques (SJSU, Spri
 a course that combined Unix/bash tooling with machine learning. Assignment notebooks live
 in `notebooks/`, their datasets in `data/`, and bash preprocessing scripts in `preprocessing/`.
 
-The main project is documented below. The `notebooks/` folder also includes midterm work
-on a breast cancer diagnosis classification problem, with its own annotated bash
-preprocessing pipeline in `preprocessing/`.
-
 ---
 
-# OCR Letter Recognition — Main Project
+# Final Project — Bridging the Gap Between Visual Input and Textual Output
 
 A machine learning project revisiting a classic optical character recognition (OCR) problem:
 given pixel measurements of a capital letter, can we correctly identify it? We used the same
 dataset from Frey and Slate's 1991 paper as a benchmark, then evaluated three modern models
 against it to see how far the field has come.
 
-*Partner project with Huu Tinh Nguyen. Full methodology and results in `CS131_Final_Report.pdf`.*
+*Partner project with Huu Tinh Nguyen. Full methodology and results in `CS131 Final Report.pdf`.*
 
 Primary contributions: dataset selection, problem framing, preprocessing pipeline, Random
 Forest and MLP implementation, experimental design, and report writing.
